@@ -11,9 +11,10 @@
     Created for the Pi Robot Project: http://www.pirobot.org
     and the Home Brew Robotics Club (HBRC): http://hbrobotics.org
     Authors: Patrick Goebel, James Nugen
+--- Your have the hardware required to run the base controller
 */
 #define USE_BASE      // Enable the base controller code
-//#undef USE_BASE     // Disable the base controller code
+//#undef USE_BASE     // Disable the base controller code // If not, you can still use your Arduino-compatible controller to read sensors and control PWM servos
 
 /* Define the motor controller and encoder library you are using */
 #ifdef USE_BASE
