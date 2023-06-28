@@ -1,7 +1,6 @@
 /* Functions and type-defs for PID control.
 
    Taken mostly from Mike Ferguson's ArbotiX code which lives at:
-   
    http://vanadium-ros-pkg.googlecode.com/svn/trunk/arbotix/
 */
 
@@ -15,7 +14,7 @@ typedef struct {
   * Using previous input (PrevInput) instead of PrevError to avoid derivative kick,
   * see http://brettbeauregard.com/blog/2011/04/improving-the-beginner%E2%80%99s-pid-derivative-kick/
   */
-  int PrevInput;                // last input
+  int PrevInput;                 // last input
   //int PrevErr;                   // last error
 
   /*
@@ -24,7 +23,7 @@ typedef struct {
   * see http://brettbeauregard.com/blog/2011/04/improving-the-beginner%E2%80%99s-pid-tuning-changes/
   */
   //int Ierror;
-  int ITerm;                    //integrated term
+  int ITerm;                      // integrated term
 
   long output;                    // last motor setting
 }
@@ -37,7 +36,7 @@ int Kp = 20;
 int Kd = 12;
 int Ki = 0;
 int Ko = 50;
-
+/*----------------*/
 unsigned char moving = 0; // is the base in motion?
 
 /*
@@ -73,7 +72,6 @@ void doPID(SetPointInfo * p) {
   //Perror = p->TargetTicksPerFrame - (p->Encoder - p->PrevEnc);
   input = p->Encoder - p->PrevEnc;
   Perror = p->TargetTicksPerFrame - input;
-
 
   /*
   * Avoid derivative kick and allow tuning changes,
@@ -127,4 +125,3 @@ void updatePID() {
   /* Set the motor speeds accordingly */
   setMotorSpeeds(leftPID.output, rightPID.output);
 }
-
