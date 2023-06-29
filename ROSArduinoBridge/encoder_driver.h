@@ -7,13 +7,13 @@
 
 #ifdef ARDUINO_ENC_COUNTER
   //below can be changed, but should be PORTD pins; 
-  //otherwise additional changes in the code are required
-  #define LEFT_ENC_PIN_A PD2  // Arduino UNO pin 2
-  #define LEFT_ENC_PIN_B PD3  // Arduino UNO pin pin 3
+  //otherwise additional changes in the code are required // Encoder wire color
+  #define LEFT_ENC_PIN_A PD2  // Arduino UNO pin 2 // Green
+  #define LEFT_ENC_PIN_B PD3  // Arduino UNO pin pin 3 // Yellow
   
   //below can be changed, but should be PORTC pins
-  #define RIGHT_ENC_PIN_A PC4  // Arduino UNO pin pin A4
-  #define RIGHT_ENC_PIN_B PC5  // Arduino UNO pin pin A5
+  #define RIGHT_ENC_PIN_A PC4  // Arduino UNO pin pin A4 // Yellow
+  #define RIGHT_ENC_PIN_B PC5  // Arduino UNO pin pin A5 // Green
 #endif
    
 long readEncoder(int i);
